@@ -7,7 +7,20 @@
 <div class="row-fluid">
 
 	<div class="span12">
-		<form method="POST">
+	
+		<c:if test="${not empty error}">
+			<div class="alert alert-error">
+				${error}
+			</div>
+		</c:if>
+	
+		<c:if test="${not empty success}">
+			<div class="alert alert-success">
+				${success}
+			</div>
+		</c:if>
+	
+		<form method="POST" enctype="multipart/form-data">
 			<label>File:</label>
 			<div>
 				<input type="file" name="file" class="span3" />
